@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <style>
+    /* 기본 리셋 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; background: #fffdf7; color: #806d58; }
+    a { color: inherit; text-decoration: none; }
+
+    /* 헤더 + 내비게이션 */
+    header { background: #fffdf7; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 40px; }
+    nav ul li a { font-size: 18px; letter-spacing: 1px; padding-bottom: 5px; }
+    nav ul li a.active { border-bottom: 2px solid #806d58; }
+
+    /* 섹션 공통 */
+    section { padding: 80px 20px; }
+    .inner { max-width: 1200px; margin: 0 auto; }
+
+    /* 홈 섹션 */
+    #home .typewriter-container { display: flex; justify-content: center; align-items: center; height: 200px; margin-bottom: 40px; }
+    #typewriter { font-size: 64px; font-weight: bold; font-family: sans-serif; }
+    #home img { display: block; width: 100%; max-width: 1500px; margin: 0 auto 20px; }
+    #home p { text-align: center; font-size: 18px; }
+
+     /* 프로필 섹션 */
+     #profile .inner { display: grid; grid-template-columns: 1fr; gap: 40px; }
+    #profile img { width: 100%; max-width: 400px; margin: 0 auto; border-radius: 10px; }
+    #profile p { font-size: 16px; text-align: center; }
+    /* 이미지2와 텍스트를 옆으로 배치 */
+    #profile .profile-row { display: flex; align-items: center; justify-content: center; gap: 20px; }
+    #profile .profile-row img { max-width: 300px; }
+    #profile .profile-row p { text-align: left; font-size: 16px; }
+
+
+    /* 포트폴리오 섹션 */
+    #portfolio .inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+    #portfolio .item img,
+    #portfolio .item video { width: 100%; height: auto; display: block; }
+    #portfolio .item p { margin-top: 10px; font-size: 16px; text-align: center; }
+
+    /* 배너 (추가 이미지 아래) */
+    .banner { position: relative; margin-top: 40px; }
+    .banner img { width: 100%; display: block; }
+    .banner .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: #fff; letter-spacing: 4px; }
+  </style>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 컨텐츠 -->
+  <main>
+    <!-- 홈 섹션 -->
+    <section id="home">
+      <div class="inner">
+        <!-- 타자기 효과 텍스트 -->
+        <div class="typewriter-container">
+          <h1 id="typewriter"></h1>
+        </div>
+        <!-- 원래 홈 이미지와 문구 -->
+        <img src="image8.png" alt="홈 이미지">
+        <!--<p>홈 문구를 여기에 입력하세요.</p>-->
+      </div>
+    </section>
+
+    <!-- 프로필 섹션 -->
+    <section id="profile">
+        <div class="inner">
+          <!-- 두 번째 프로필: 이미지와 텍스트 옆배치 -->
+          <div class="profile-row">
+    
+            <img src="image2.png" alt="프로필 이미지2">
+            <div class="profile-text">
+                <h1>고도림</h1><br>
+                <h2>살아오며 인상 깊었던 문장 or 이번 생에 풀고 싶은 질문</h2>
+                <p>“인생이 나에게 레몬을 주거든, 그것으로 레몬 에이드를 만들어라.”</p>
+          
+                <h2>내가 사랑하는 것들</h2>
+                <p>우리 가족, 웹툰 <em>유미의 세포들</em>, 표고버섯, 맛조개 잡기, 튀르키예, 오키나와</p>
+          
+                <h2>10년 후에 나는</h2>
+                <p>29살 나는 어떤 모습일까? 여전히 내가 사랑하는 것을 소중히 여기고, 조금 더 자유롭고 단단해진 내가 되어 있기를.</p>
+          
+                <h2>지금까지 나는</h2>
+                <strong>봉사 활동</strong>
+                <p>[2022.07] ~ [2022.08] 지역 아동센터 여름방학 코딩 캠프 운영<br>
+                   [2023.04] ~ [2023.06] 초등학생 대상 미술 심리 활동 보조</p>
+          
+                <strong>수상 경력</strong>
+                <p>[2023.11] ~ [2023.11] 지역 창의소프트웨어 공모전 우수상 수상<br>
+                   [2022.10] ~ [2022.10] 학습 멘토링 우수활동자 표창</p>
+          
+                <strong>관심 분야 활동</strong>
+                <p>[2021.03] ~ [2022.12] 중·고등학생 대상 파이썬 기초강의 진행<br>
+                   [2023.01] ~ [2023.05] 환경 교육 프로젝트 ‘지구지킴이’ 참여</p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Portfolio 섹션 -->
+
+      <!-- 포트폴리오 섹션 -->
+      <section id="portfolio">
+        <div class="inner">
+          <!-- 이미지 3 & 4 -->
+          <div class="item">
+            <img src="image3.png" alt="작품1">
+          <p>피카소 스타일 고양이</p>
+          </div>
+          <div class="item">
+            <img src="image4.png" alt="작품2">
+          <p>샤갈 스타일의 하얀 날아다니는 고양이</p>
+          </div>
+          <div class="item">
+          <img src="image5.png" alt="작품3">
+          <p>레오나르도 다 빈치 스타일의 날아다니는 고양이</p>
+          </div>
+          <div class="item">
+          <img src="image6.png" alt="작품4">
+          <p>모네 스타일 고양이</p>
+          </div>
+          <!-- 영상 5 & 6 -->
+          <div class="item">
+            <video src="video1.mp4" controls></video>
+            <p>음악생성</p>
+          </div>
+          <div class="item">
+            <video src="video2.mp4" controls></video>
+            <p>영상편집집</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p style="text-align:center; padding:20px 0;">© 2025 My Portfolio</p>
+  </footer>
+
+  <!-- 자바스크립트 -->
+  <script>
+    // 내비게이션 활성화 토글
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        // 해당 섹션으로 스크롤
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // 타자기 효과
+    window.addEventListener('DOMContentLoaded', () => {
+      const text = 'DORIMGO';
+      let idx = 0;
+      const speed = 200;
+      const el = document.getElementById('typewriter');
+      function type() {
+        if (idx < text.length) {
+          el.textContent += text.charAt(idx);
+          idx++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    });
+  </script>
+</body>
+</html>
